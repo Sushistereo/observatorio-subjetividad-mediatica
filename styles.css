@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Bebas+Neue:wght@400&display=swap');
 
 * {
     margin: 0;
@@ -702,4 +702,55 @@ body {
         max-width: 300px;
         height: 250px;
     }
+}
+
+/* Footer Credits */
+.footer-credits {
+    background: #0a0a0a;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-credits p {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.footer-credits a {
+    color: #00ff88;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.footer-credits a:hover {
+    color: #00ccff;
+    text-shadow: 0 0 8px rgba(0,255,136,0.5);
+}
+
+.footer-credits a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: linear-gradient(90deg, #00ff88, #00ccff);
+    transition: width 0.3s ease;
+}
+
+.footer-credits a:hover::after {
+    width: 100%;
+}
+
+.footer-credits .agency-name {
+    font-family: 'Bebas Neue', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1rem;
 }
