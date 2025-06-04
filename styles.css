@@ -213,11 +213,12 @@ body {
 }
 
 .about-text {
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-size: 0.95rem;
+    line-height: 1.5;
     color: rgba(255,255,255,0.9);
     margin-bottom: 30px;
     font-weight: 400;
+    text-align: justify;
 }
 
 .workshop-section {
@@ -290,19 +291,7 @@ body {
 }
 
 .featured-project a {
-    transition: all 0.3s ease;
-}
-
-.featured-project a:hover .project-hero-title {
-    transform: translateX(10px);
-    color: #00ff88;
-    text-shadow: 0 0 20px rgba(0,255,136,0.5);
-}
-
-.featured-project a:hover .project-visual {
-    transform: translateY(-50%) scale(1.05);
-    border-color: #ff6b6b;
-    box-shadow: 0 0 30px rgba(255,107,107,0.4);
+    transition: none;
 }
 
 .featured-project::before {
@@ -369,7 +358,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* Visual del proyecto con elementos tech */
+/* Visual del proyecto - placeholder simple para imagen */
 .project-visual {
     position: absolute;
     right: 60px;
@@ -385,7 +374,6 @@ body {
     backdrop-filter: blur(15px);
     border: 2px solid rgba(0,255,136,0.3);
     overflow: hidden;
-    transition: all 0.3s ease;
 }
 
 .project-visual::before {
@@ -414,58 +402,7 @@ body {
     letter-spacing: 2px;
     position: relative;
     border: 2px dashed rgba(255,107,107,0.6);
-    overflow: hidden;
-}
-
-.punk-illustration {
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    border: 3px solid #fff;
-    border-radius: 50%;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: linear-gradient(45deg, #ff6b6b 0%, #000 50%, #ff6b6b 100%);
-}
-
-.punk-illustration::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 60px;
-    height: 60px;
-    background: #000;
-    transform: translate(-50%, -50%);
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-}
-
-.punk-illustration::after {
-    content: '⚡';
-    position: absolute;
-    top: 20%;
-    right: 20%;
-    font-size: 20px;
-    color: #00ff88;
-    animation: blink 1.5s infinite;
-}
-
-.radar-circle {
-    position: absolute;
-    border: 2px solid #ff6b6b;
-    border-radius: 50%;
-    animation: punk-pulse 2s linear infinite;
-}
-
-.radar-1 { width: 80px; height: 80px; animation-delay: 0s; }
-.radar-2 { width: 120px; height: 120px; animation-delay: 0.7s; opacity: 0.7; }
-.radar-3 { width: 160px; height: 160px; animation-delay: 1.4s; opacity: 0.4; }
-
-@keyframes punk-pulse {
-    0% { transform: scale(0.8) rotate(0deg); opacity: 1; }
-    50% { transform: scale(1) rotate(180deg); opacity: 0.6; }
-    100% { transform: scale(1.2) rotate(360deg); opacity: 0; }
+    font-size: 0.9rem;
 }
 
 /* Banner inferior */
@@ -557,9 +494,28 @@ body {
     background: linear-gradient(135deg, #2c2c2c 0%, #1e1e1e 100%);
     border-radius: 15px;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     border: 1px solid rgba(255,255,255,0.1);
     position: relative;
+}
+
+.latest-card.hidden {
+    display: none;
+}
+
+.latest-card.show {
+    animation: cardAppear 0.4s ease forwards;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .latest-card::before {
